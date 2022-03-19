@@ -13,11 +13,11 @@ readonly DB_PASSWORD=${DB_PASSWORD:-noise}
 readonly DB_HOST=$POSTGRES_PORT_5432_TCP_ADDR
 
 readonly DB_SCHEMA=${DB_SCHEMA:-public}
-readonly PG_CONNECT="postgis://$DB_USER:$DB_PASSWORD@$DB_HOST/$DB_NAME"
-
+readonly PG_CONNECT="postgres://$DB_USER:$DB_PASSWORD@$DB_HOST/$DB_NAME?sslmode=disable"
+echo $PG_CONNECT
 function import_pbf() {
     local pbf_file="$1"
-    imposm3 import \
+    imposm import \
         -connection "$PG_CONNECT" \
         -mapping "$MAPPING_YAML" \
         -overwritecache \
