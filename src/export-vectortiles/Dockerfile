@@ -4,10 +4,10 @@ MAINTAINER Lukas Martinelli <me@lukasmartinelli.ch>
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN apt-get update
+RUN apt-get update -y
 RUN apt-get -y install libstdc++6
 
-RUN npm install -g tl@0.8.*
+RUN npm install -g tl@0.8.x
 RUN npm install -g mapnik@3.5.x
 RUN npm install -g mbtiles@0.8.x
 RUN npm install -g tilelive@5.12.x
