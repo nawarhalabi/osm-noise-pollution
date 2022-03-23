@@ -1,9 +1,17 @@
 tables:
   motorway:
     type: linestring
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       highway:
       - motorway
@@ -13,9 +21,17 @@ tables:
        - ["tunnel", "yes"]
   trunk:
     type: linestring
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       highway:
       - trunk
@@ -25,9 +41,17 @@ tables:
        - ["tunnel", "yes"]
   primary_road:
     type: linestring
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       highway:
       - primary
@@ -37,9 +61,17 @@ tables:
        - ["tunnel", "yes"]
   secondary_road:
     type: linestring
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       highway:
       - secondary
@@ -49,9 +81,17 @@ tables:
        - ["tunnel", "yes"]
   tertiary_road:
     type: linestring
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       highway:
       - tertiary
@@ -61,32 +101,64 @@ tables:
        - ["tunnel", "yes"]
   industrial_zone:
     type: polygon
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       landuse:
       - industrial
   retail_zone:
     type: polygon
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       landuse:
       - retail
   shop:
     type: point
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       shop: [__any__]
   food:
     type: point
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       amenity:
       - bar
@@ -100,9 +172,17 @@ tables:
       - restaurant
   party:
     type: point
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       amenity:
       - cinema
@@ -114,9 +194,17 @@ tables:
       - theatre
   leisure:
     type: point
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       leisure:
       - beach_resort
@@ -130,9 +218,17 @@ tables:
       - zoo
   sport:
     type: point
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       sport:
       - american_football
@@ -158,9 +254,17 @@ tables:
       - water_ski
   railway:
     type: linestring
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       railway:
       - rail
@@ -174,9 +278,17 @@ tables:
        - ["tunnel", "yes"]
   light_railway:
     type: linestring
-    fields:
+    columns:
     - name: geometry
       type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
     mapping:
       railway:
       - tram
