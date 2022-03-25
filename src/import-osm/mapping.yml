@@ -6,12 +6,12 @@ tables:
       type: geometry
     - name: osm_id
       type: id
-    - key: name
-      name: name
-      type: string
     - key: ref
       name: ref
       type: string
+    - key: maxspeed
+      name: maxspeed
+      type: integer
     mapping:
       highway:
       - motorway
@@ -26,12 +26,12 @@ tables:
       type: geometry
     - name: osm_id
       type: id
-    - key: name
-      name: name
-      type: string
     - key: ref
       name: ref
       type: string
+    - key: maxspeed
+      name: maxspeed
+      type: integer
     mapping:
       highway:
       - trunk
@@ -46,12 +46,12 @@ tables:
       type: geometry
     - name: osm_id
       type: id
-    - key: name
-      name: name
-      type: string
     - key: ref
       name: ref
       type: string
+    - key: maxspeed
+      name: maxspeed
+      type: integer
     mapping:
       highway:
       - primary
@@ -66,12 +66,12 @@ tables:
       type: geometry
     - name: osm_id
       type: id
-    - key: name
-      name: name
-      type: string
     - key: ref
       name: ref
       type: string
+    - key: maxspeed
+      name: maxspeed
+      type: integer
     mapping:
       highway:
       - secondary
@@ -86,12 +86,12 @@ tables:
       type: geometry
     - name: osm_id
       type: id
-    - key: name
-      name: name
-      type: string
     - key: ref
       name: ref
       type: string
+    - key: maxspeed
+      name: maxspeed
+      type: integer
     mapping:
       highway:
       - tertiary
@@ -131,6 +131,7 @@ tables:
     mapping:
       landuse:
       - retail
+      - commercial
   shop:
     type: point
     columns:
@@ -217,7 +218,7 @@ tables:
       - theme_park
       - zoo
   sport:
-    type: point
+    type: polygon
     columns:
     - name: geometry
       type: geometry
@@ -230,6 +231,8 @@ tables:
       name: ref
       type: string
     mapping:
+      leisure:
+      - sports_centre
       sport:
       - american_football
       - baseball
@@ -252,6 +255,46 @@ tables:
       - volleyball
       - tennis
       - water_ski
+      - multi
+  sport_point:
+    type: point
+    columns:
+    - name: geometry
+      type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    mapping:
+      leisure:
+      - sports_centre
+      sport:
+      - american_football
+      - baseball
+      - beachvolleyball
+      - bmx
+      - canadian_football
+      - cockfighting
+      - cricket
+      - dog_racing
+      - field_hockey
+      - horse_racing
+      - ice_hockey
+      - ice_skating
+      - obstacle_course
+      - rc_car
+      - rugby_league
+      - rugby_union
+      - shooting
+      - soccer
+      - volleyball
+      - tennis
+      - water_ski
+      - multi
   railway:
     type: linestring
     columns:
@@ -298,3 +341,41 @@ tables:
     filters:
       exclude_tags:
        - ["tunnel", "yes"]
+  school_point:
+    type: point
+    columns:
+    - name: geometry
+      type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    mapping:
+      amenity:
+      - school
+      - kindergarten
+      landuse:
+      - education
+  school:
+    type: polygon
+    columns:
+    - name: geometry
+      type: geometry
+    - name: osm_id
+      type: id
+    - key: name
+      name: name
+      type: string
+    - key: ref
+      name: ref
+      type: string
+    mapping:
+      amenity:
+      - school
+      - kindergarten
+      landuse:
+      - education
